@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class patient{
+public class Patient{
     private String username;
     private String password;
     private String fullName;
@@ -10,7 +10,7 @@ public class patient{
     private List<Provider> providers;
     private List<Reminder> reminders;
 
-    public patient(String username, String password, String fullName, String insuranceInfo){
+    public Patient(String username, String password, String fullName, String insuranceInfo){
         this.username = username;
         this.password = password;
         this.fullName = fullName;
@@ -45,13 +45,13 @@ public class patient{
     public void addReminder(Reminder reminder) {
         reminders.add(reminder);
     }
-    public static patient loadFromFile(String username) throws IOException {
+    public static Patient loadFromFile(String username) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("patients.txt"));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
             if (parts[0].equals(username)) {
-                patient user = new patient(parts[0], parts[1], parts[2], parts[3]);
+                Patient user = new Patient(parts[0], parts[1], parts[2], parts[3]);
                 user.providers = loadProviders(parts[4]);
                 user.reminders = loadReminders(parts[5]);
                 reader.close();
