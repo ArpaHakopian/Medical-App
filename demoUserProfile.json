@@ -1,0 +1,9 @@
+{
+  "username": "user",
+  "password": "pass",
+  "firstName": "John",
+  "lastName": "Smith",
+  "birthDate": "01/29/1995",
+  "zipCode": "91330",
+  "provider": "ACME Corporation"
+}
