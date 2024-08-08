@@ -4,14 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.util.ArrayList;
 
 import java.net.URL;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -24,13 +21,13 @@ public class MainSceneControl implements Initializable {
     private Button filterButton;
 
     @FXML
-    private ComboBox<String> insuranceField;
+    private ChoiceBox<String> insuranceField;
 
     @FXML
-    private ComboBox<?> specialistField;
+    private ChoiceBox<String> specialistField;
 
     @FXML
-    private ComboBox<?> zipCodeField;
+    private ChoiceBox<String> zipCodeField;
 
     @FXML
     private TableView<Specialist> specialistsTable;
@@ -50,13 +47,29 @@ public class MainSceneControl implements Initializable {
     @FXML
     private TableColumn<Specialist, String> zipCodeColumn;
 
-//    public void
+    @FXML
+    public void handleClearFilterButton() {
+        specialistField.setValue(null);
+        insuranceField.setValue(null);
+        zipCodeField.setValue(null);
+    }
+    @FXML
+    public void handleFilterButton() {
+        List<Specialist> filteredSpecialists = SpecialistsManager.getFilteredData(insuranceField.getValue(), specialistField.getValue(), zipCodeField.getValue());
+
+        specialistsTable.setItems(FXCollections.observableArrayList(filteredSpecialists));
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        ObservableList<String> insuranceOptionsList = new ArrayList<>(SpecialistsManager.getAllSpecialistTypes());
-        ObservableList<String> insuranceOptionsList = FXCollections.observableArrayList(SpecialistsManager.getAllSpecialistTypes());
-        insuranceField.setItems(insuranceOptionsList);
+        ObservableList<String> insuranceOptions = FXCollections.observableArrayList(SpecialistsManager.getAllInsuranceCompanies());
+        insuranceField.setItems(insuranceOptions);
+
+        ObservableList<String> specialistsOptions = FXCollections.observableArrayList(SpecialistsManager.getAllSpecialistTypes());
+        specialistField.setItems(specialistsOptions);
+
+        ObservableList<String> zipCodeOptions = FXCollections.observableArrayList(SpecialistsManager.getAllZipCodes());
+        zipCodeField.setItems(zipCodeOptions);
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<Specialist, String>("name"));
         specialtyColumn.setCellValueFactory(new PropertyValueFactory<Specialist, String>("specialty"));
@@ -68,5 +81,20 @@ public class MainSceneControl implements Initializable {
 
         specialists.addAll(Objects.requireNonNull(SpecialistsManager.getAllSpecialists()));
         specialistsTable.setItems(specialists);
+
+        specialistsTable.setRowFactory(_ -> {
+            TableRow<Specialist> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    Specialist rowData = row.getItem();
+                    handleRowDoubleClick(rowData);
+                }
+            });
+            return row;
+        });
+    }
+
+    private void handleRowDoubleClick(Specialist specialist) {
+        System.out.println("Double-clicked on: " + specialist.getName() + ", Zip Code: " + specialist.getZipCode());
     }
 }

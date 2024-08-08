@@ -37,11 +37,6 @@ public class PatientSchedulerApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.centerOnScreen();
-/////////////////////////////////////////////////////
-        System.out.println("dd");
-//        System.out.println(SpecialistsManager.getAllSpecialists());
-        List<Specialist> specialists = SpecialistsManager.getAllSpecialists();
-/////////////////////////////////////////////////////
     }
 
     public void showMainScene() throws IOException {
