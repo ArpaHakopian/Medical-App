@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Dr. John Doe",
+    "specialty": "Cardiologist",
+    "insurance": "Aetna",
+    "officeAddress": "123 Heart Lane",
+    "zipCode": "90210"
+  },
+  {
+    "name": "Dr. Jane Smith",
+    "specialty": "Pediatrician",
+    "insurance": "Blue Cross",
+    "officeAddress": "456 Oak Street",
+    "zipCode": "12345"
+  },
+  {
+    "name": "Dr. Emily Brown",
+    "specialty": "Dermatologist",
+    "insurance": "Cigna",
+    "officeAddress": "789 Skin Avenue",
+    "zipCode": "67890"
+  },
+  {
+    "name": "Dr. Michael Johnson",
+    "specialty": "Neurologist",
+    "insurance": "Humana",
+    "officeAddress": "101 Brain Blvd",
+    "zipCode": "11223"
+  },
+  {
+    "name": "Dr. Sarah Davis",
+    "specialty": "Orthopedic Surgeon",
+    "insurance": "United Healthcare",
+    "officeAddress": "202 Bone Road",
+    "zipCode": "33445"
+  },
+  {
+    "name": "Dr. William Martinez",
+    "specialty": "Gastroenterologist",
+    "insurance": "Medicare",
+    "officeAddress": "303 Stomach Street",
+    "zipCode": "55678"
+  },
+  {
+    "name": "Dr. Olivia Wilson",
+    "specialty": "Endocrinologist",
+    "insurance": "Tricare",
+    "officeAddress": "404 Hormone Avenue",
+    "zipCode": "66789"
+  },
+  {
+    "name": "Dr. James Garcia",
+    "specialty": "Psychiatrist",
+    "insurance": "Medicaid",
+    "officeAddress": "505 Mind Way",
+    "zipCode": "77890"
+  },
+  {
+    "name": "Dr. Isabella Martinez",
+    "specialty": "Ophthalmologist",
+    "insurance": "Aetna",
+    "officeAddress": "606 Eye Lane",
+    "zipCode": "88901"
+  },
+  {
+    "name": "Dr. Alexander Clark",
+    "specialty": "Urologist",
+    "insurance": "Blue Cross",
+    "officeAddress": "707 Kidney Court",
+    "zipCode": "99012"
+  },
+  {
+    "name": "Dr. Sophia Hernandez",
+    "specialty": "Oncologist",
+    "insurance": "Cigna",
+    "officeAddress": "808 Cancer Boulevard",
+    "zipCode": "10123"
+  },
+  {
+    "name": "Dr. Daniel Robinson",
+    "specialty": "Pulmonologist",
+    "insurance": "Humana",
+    "officeAddress": "909 Lung Street",
+    "zipCode": "22334"
+  },
+  {
+    "name": "Dr. Mia Rodriguez",
+    "specialty": "Rheumatologist",
+    "insurance": "United Healthcare",
+    "officeAddress": "1010 Joint Road",
+    "zipCode": "33456"
+  },
+  {
+    "name": "Dr. Henry Lewis",
+    "specialty": "Allergist",
+    "insurance": "Medicare",
+    "officeAddress": "1111 Allergy Avenue",
+    "zipCode": "44567"
+  },
+  {
+    "name": "Dr. Charlotte Walker",
+    "specialty": "Immunologist",
+    "insurance": "Tricare",
+    "officeAddress": "1212 Immune Lane",
+    "zipCode": "55678"
+  }
+]
