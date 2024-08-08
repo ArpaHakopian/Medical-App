@@ -40,11 +40,11 @@ public class RemindersModule {
     }
 
     // Method to get reminders from file
-    public static List<RemindersModel> getReminders() {
+    public static List<RemindersModule> getReminders() {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            List<RemindersModel> reminders = objectMapper.readValue(new File(remindersFilePath), new TypeReference<List<RemindersModel>>(){});
+            List<RemindersModule> reminders = objectMapper.readValue(new File(remindersFilePath), new TypeReference<List<RemindersModule>>(){});
             return reminders;
         } catch (IOException e) {
             System.err.println("FAILED to get reminders from: " + remindersFilePath);

@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2024-07-30",
+    "time": "09:00 AM",
+    "message": "Doctor appointment with Dr. Smith"
+  },
+  {
+    "date": "2024-07-31",
+    "time": "02:00 PM",
+    "message": "Follow-up appointment with cardiologist"
+  },
+  {
+    "date": "2024-08-01",
+    "time": "10:30 AM",
+    "message": "Blood test at the lab"
+  }
+]
