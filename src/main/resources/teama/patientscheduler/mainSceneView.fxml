@@ -11,80 +11,174 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="656.0" prefWidth="940.0" side="RIGHT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <tabs>
-        <Tab text="HOMEPAGE">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6f0ea" height="268.0" layoutX="34.0" layoutY="33.0" stroke="#00000030" strokeType="INSIDE" width="200.0">
-                            <effect>
-                                <DropShadow>
-                                    <color>
-                                        <Color red="0.8187134265899658" green="0.8187134265899658" blue="0.8187134265899658" />
-                                    </color>
-                                </DropShadow>
-                            </effect>
-                        </Rectangle>
-                        <Circle fill="#f3f6f9" layoutX="134.0" layoutY="114.0" radius="60.0" stroke="#00000092" strokeType="INSIDE" />
-                        <Circle fill="#e0e0e0" layoutX="134.0" layoutY="98.0" radius="25.0" stroke="#0000004e" strokeType="INSIDE" />
-                        <QuadCurve controlX="2.4444427490234375" controlY="38.33332824707031" endX="43.22221374511719" endY="1.52587890625E-5" fill="#48bdf080" layoutX="134.0" layoutY="155.0" startX="-44.22221374511719" startY="1.52587890625E-5" stroke="#00000031" strokeType="INSIDE" />
-                        <QuadCurve controlX="-6.2222442626953125" controlY="-64.33333587646484" endX="35.99998474121094" endY="1.52587890625E-5" fill="#48bdf080" layoutX="140.0" layoutY="155.0" startX="-50.22221374511719" startY="1.52587890625E-5" stroke="#0000004e" strokeType="INSIDE" />
-                        <Separator blendMode="DARKEN" layoutX="23.0" layoutY="328.0" prefHeight="34.0" prefWidth="462.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5b9bd31" height="200.0" layoutX="34.0" layoutY="391.0" stroke="TRANSPARENT" strokeType="INSIDE" width="440.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceff3" height="82.0" layoutX="67.0" layoutY="450.0" stroke="#0000003d" strokeType="INSIDE" width="84.0" />
-                        <QuadCurve controlX="-25.307693481445312" controlY="-67.80641174316406" endX="15.354978561401367" endY="-9.846705436706543" fill="#f5dcd787" layoutX="129.0" layoutY="536.0" rotate="9.0" startX="-50.0" stroke="#00000039" strokeType="INSIDE" />
-                        <Circle fill="#e0e0e0" layoutX="109.0" layoutY="479.0" radius="20.0" stroke="#0000004e" strokeType="INSIDE" />
-                        <Text layoutX="175.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provider " wrappingWidth="85.24784851074219">
-                            <font>
-                                <Font name="Yu Gothic UI Bold" size="18.0" />
-                            </font>
-                        </Text>
-                        <Text layoutX="177.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACME Corporation" wrappingWidth="165.2478485107422">
-                            <font>
-                                <Font name="Yu Gothic UI Regular" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text layoutX="336.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary Care" wrappingWidth="85.24784851074219">
-                            <font>
-                                <Font name="Yu Gothic UI Regular" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text layoutX="336.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="85.24784851074219">
-                            <font>
-                                <Font name="Yu Gothic UI Bold" size="18.0" />
-                            </font>
-                        </Text>
-                        <Text layoutX="71.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John Smith" textAlignment="CENTER" wrappingWidth="125.24783515930176">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Text>
-                        <Text layoutX="71.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01.29.1995" textAlignment="CENTER" wrappingWidth="125.24783515930176">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Text>
-                    </children>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.8011695742607117" green="0.7995210886001587" blue="0.7995210886001587" />
-                            </color>
-                        </DropShadow>
-                    </effect></AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="SCHEDULE">
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teama.patientscheduler.MainSceneControl">
+   <children>
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="HOMEPAGE">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6f0ea" height="268.0" layoutX="34.0" layoutY="33.0" stroke="#00000030" strokeType="INSIDE" width="200.0">
+                                <effect>
+                                    <DropShadow>
+                                        <color>
+                                            <Color red="0.8187134265899658" green="0.8187134265899658" blue="0.8187134265899658" />
+                                        </color>
+                                    </DropShadow>
+                                </effect>
+                            </Rectangle>
+                            <Circle fill="#f3f6f9" layoutX="134.0" layoutY="114.0" radius="60.0" stroke="#00000092" strokeType="INSIDE" />
+                            <Circle fill="#e0e0e0" layoutX="134.0" layoutY="98.0" radius="25.0" stroke="#0000004e" strokeType="INSIDE" />
+                            <QuadCurve controlX="2.4444427490234375" controlY="38.33332824707031" endX="43.22221374511719" endY="1.52587890625E-5" fill="#48bdf080" layoutX="134.0" layoutY="155.0" startX="-44.22221374511719" startY="1.52587890625E-5" stroke="#00000031" strokeType="INSIDE" />
+                            <QuadCurve controlX="-6.2222442626953125" controlY="-64.33333587646484" endX="35.99998474121094" endY="1.52587890625E-5" fill="#48bdf080" layoutX="140.0" layoutY="155.0" startX="-50.22221374511719" startY="1.52587890625E-5" stroke="#0000004e" strokeType="INSIDE" />
+                            <Separator blendMode="DARKEN" layoutX="23.0" layoutY="328.0" prefHeight="34.0" prefWidth="462.0" />
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5b9bd31" height="200.0" layoutX="34.0" layoutY="391.0" stroke="TRANSPARENT" strokeType="INSIDE" width="440.0" />
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceff3" height="82.0" layoutX="67.0" layoutY="450.0" stroke="#0000003d" strokeType="INSIDE" width="84.0" />
+                            <QuadCurve controlX="-25.307693481445312" controlY="-67.80641174316406" endX="15.354978561401367" endY="-9.846705436706543" fill="#f5dcd787" layoutX="129.0" layoutY="536.0" rotate="9.0" startX="-50.0" stroke="#00000039" strokeType="INSIDE" />
+                            <Circle fill="#e0e0e0" layoutX="109.0" layoutY="479.0" radius="20.0" stroke="#0000004e" strokeType="INSIDE" />
+                            <Text layoutX="175.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provider " wrappingWidth="85.24784851074219">
+                                <font>
+                                    <Font name="Yu Gothic UI Bold" size="18.0" />
+                                </font>
+                            </Text>
+                            <Text layoutX="177.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACME Corporation" wrappingWidth="165.2478485107422">
+                                <font>
+                                    <Font name="Yu Gothic UI Regular" size="14.0" />
+                                </font>
+                            </Text>
+                            <Text layoutX="336.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary Care" wrappingWidth="85.24784851074219">
+                                <font>
+                                    <Font name="Yu Gothic UI Regular" size="14.0" />
+                                </font>
+                            </Text>
+                            <Text layoutX="336.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="85.24784851074219">
+                                <font>
+                                    <Font name="Yu Gothic UI Bold" size="18.0" />
+                                </font>
+                            </Text>
+                            <Text layoutX="71.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John Smith" textAlignment="CENTER" wrappingWidth="125.24783515930176">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Text>
+                            <Text layoutX="71.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01.29.1995" textAlignment="CENTER" wrappingWidth="125.24783515930176">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Text>
+                        </children>
+                        <effect>
+                            <DropShadow>
+                                <color>
+                                    <Color red="0.8011695742607117" green="0.7995210886001587" blue="0.7995210886001587" />
+                                </color>
+                            </DropShadow>
+                        </effect></AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="SCHEDULE">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                </content>
+            </Tab>
+            <Tab text="REMINDERS">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <fx:include source="remindersSceneView.fxml" />
+                </content>
+            </Tab>
+          <Tab closable="false" text="Untitled Tab 1">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
-        </Tab>
-        <Tab text="REMINDERS">
+          </Tab>
+          <Tab text="Untitled Tab 2">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                <fx:include source="remindersSceneView.fxml" />
+                  <StackPane alignment="TOP_CENTER">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Insurance" />
+                                          <ChoiceBox fx:id="insuranceField" prefWidth="150.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Specialist Type" />
+                                          <ChoiceBox fx:id="specialistField" prefWidth="150.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
+                                          <ChoiceBox fx:id="zipCodeField" prefWidth="150.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="filterButton" mnemonicParsing="false" onAction="#handleFilterButton" text="Filter">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="clearFilterButton" mnemonicParsing="false" onAction="#handleClearFilterButton" text="Clear Filter" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="specialistsTable">
+                                <columns>
+                                  <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                                    <TableColumn fx:id="specialtyColumn" prefWidth="92.0" text="Specialty" />
+                                    <TableColumn fx:id="insuranceColumn" prefWidth="88.0" text="Insurance" />
+                                    <TableColumn fx:id="officeAddressColumn" prefWidth="118.0" text="Office Address" />
+                                    <TableColumn fx:id="zipCodeColumn" prefWidth="120.0" text="Zip Code" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="*Double click a row to schedule an appointment">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
             </content>
         </Tab>
     </tabs>
