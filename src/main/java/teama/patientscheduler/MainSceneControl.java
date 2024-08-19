@@ -3,8 +3,13 @@ package teama.patientscheduler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import java.io.IOException;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -94,7 +99,29 @@ public class MainSceneControl implements Initializable {
         });
     }
 
+   // private void handleRowDoubleClick(Specialist specialist) {
+   //     System.out.println("Double-clicked on: " + specialist.getName() + ", Zip Code: " + specialist.getZipCode());
+  //  }
+    @FXML
     private void handleRowDoubleClick(Specialist specialist) {
-        System.out.println("Double-clicked on: " + specialist.getName() + ", Zip Code: " + specialist.getZipCode());
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("appointmentBookingSceneView.fxml"));
+            VBox appointmentBookingScene = loader.load();
+
+            AppointmentBookingControl controller = loader.getController();
+            controller.setSelectedSpecialist(specialist);
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(appointmentBookingScene);
+            stage.setScene(scene);
+            stage.setTitle("Book Appointment");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Failed to load appointment booking scene.");
+            alert.showAndWait();
+        }
     }
+
 }
