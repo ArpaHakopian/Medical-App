@@ -13,7 +13,7 @@ public class RemindersModule {
 
     private static final String remindersFilePath = "reminders.json";
 
-    // Getters
+
     public String getDate() {
         return date;
     }
@@ -26,7 +26,7 @@ public class RemindersModule {
         return message;
     }
 
-    // Setters
+
     public void setDate(String date) {
         this.date = date;
     }
@@ -39,7 +39,7 @@ public class RemindersModule {
         this.message = message;
     }
 
-    // Method to get reminders from file
+    //get reminders from file
     public static List<RemindersModule> getReminders() {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -50,6 +50,20 @@ public class RemindersModule {
             System.err.println("FAILED to get reminders from: " + remindersFilePath);
             e.printStackTrace();
             return null;
+        }
+    }
+    //add a new reminder
+    public static void addReminder(RemindersModule newReminder) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<RemindersModule> reminders = getReminders();
+
+        reminders.add(newReminder);
+
+        try {
+            objectMapper.writeValue(new File(remindersFilePath), reminders);
+        } catch (IOException e) {
+            System.err.println("FAILED to write reminders to: " + remindersFilePath);
+            e.printStackTrace();
         }
     }
 }

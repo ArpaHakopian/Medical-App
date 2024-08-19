@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class AppointmentManager {
 
     public static List<String> getAvailableAppointmentsForSpecialist(Specialist specialist) {
-        // Simulated data
         List<String> availableAppointments = new ArrayList<>();
         availableAppointments.add("2024-08-20 10:00 AM");
         availableAppointments.add("2024-08-20 11:00 AM");
@@ -14,8 +13,14 @@ public class AppointmentManager {
         return availableAppointments;
     }
 
+
     public static void bookAppointment(Specialist specialist, String appointmentTime) {
-        // Simulated booking logic
-        System.out.println("Booking appointment with " + specialist.getName() + " at " + appointmentTime);
+
+        RemindersModule reminder = new RemindersModule();
+        reminder.setDate(appointmentTime.split(" ")[0]);
+        reminder.setTime(appointmentTime.split(" ")[1]);
+        reminder.setMessage("Appointment with " + specialist.getName());
+
+        RemindersModule.addReminder(reminder);
     }
 }
